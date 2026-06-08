@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Симулятор баристи</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div>
+        <h1>☕ Симулятор баристи</h1>
+        <p>Готуй напої за рецептами, заробляй гроші та чайові.</p>
+      </div>
+
+      <div class="stats">
+        <div>
+          <span>Гроші</span>
+          <strong id="money">$0</strong>
+        </div>
+        <div>
+          <span>Клієнти</span>
+          <strong id="served">0</strong>
+        </div>
+        <div>
+          <span>Помилки</span>
+          <strong id="mistakes">0</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="game">
+      <section class="card customer-card">
+        <h2>Покупець</h2>
+
+        <div class="customer">
+          <div class="face">
+            <div class="eyes"></div>
+            <div class="mouth" id="mouth2"></div>
+            
+          </div>
+
+          <div class="bubble">
+            <p id="customerText">Натисни “Новий клієнт”, щоб почати.</p>
+            <h3 id="orderName">Очікування...</h3>
+          </div>
+        </div>
+
+        <div class="timer-box">
+          <div class="timer-info">
+            <span>Терпіння клієнта</span>
+            <b id="timeText">—</b>
+          </div>
+          <div class="timer-line">
+            <div id="timerBar"></div>
+          </div>
+        </div>
+
+        <button id="newCustomerBtn" class="main-btn">Новий клієнт</button>
+      </section>
+
+      <section class="card machine-card">
+        <h2>Кавова станція</h2>
+
+        <div class="cups">
+          <div class="cup">
+            <div id="cupFill" class="cup-fill"></div>
+            <div id="foam" class="foam"></div>
+          </div>
+          <p id="currentDrink">Порожня чашка</p>
+        </div>
+
+        <div class="ingredients">
+          <button data-ingredient="espresso">Еспресо</button>
+          <button data-ingredient="milk">Молоко</button>
+          <button data-ingredient="foam">Пінка</button>
+          <button data-ingredient="chocolate">Шоколад</button>
+          <button data-ingredient="ice">Лід</button>
+          <button data-ingredient="caramel">Карамель</button>
+        </div>
+
+        <div class="actions">
+          <button id="serveBtn" class="serve-btn">Подати напій</button>
+          <button id="clearBtn" class="clear-btn">Очистити чашку</button>
+        </div>
+
+        <div class="made-box">
+          <h3>Додано:</h3>
+          <ul id="madeList"></ul>
+        </div>
+      </section>
+
+      <section class="card recipe-card">
+        <h2>Рецепти</h2>
+        <div id="recipes"></div>
+      </section>
+    </main>
+
+    <section class="card log-card">
+      <h2>Журнал гри</h2>
+      <div id="log"></div>
+    </section>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
